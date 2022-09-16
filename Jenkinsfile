@@ -3,7 +3,7 @@ pipeline {
     
     environment {
     imagename = "becomedevops/petclinics"
-    registryCredential = 'vaishnavibiradar'
+    registryCredential = 'my dockercredentials'
     dockerImage = ''
   }
     agent any
@@ -54,7 +54,7 @@ pipeline {
                 echo 'push image'
                 script{
                     
-                 docker.withRegistry( '', vaishnavibiradar ) {
+                 docker.withRegistry( '', my dockercredentials) {
                   dockerImage.push("$BUILD_NUMBER")
                   dockerImage.push('latest')
                  }}
