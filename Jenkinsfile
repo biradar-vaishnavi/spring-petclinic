@@ -54,7 +54,7 @@ pipeline {
                 echo 'push image'
                 script{
                     
-                 docker.withRegistry( '', registryCredential ) {
+                 docker.withRegistry( '', vaishnavibiradar ) {
                   dockerImage.push("$BUILD_NUMBER")
                   dockerImage.push('latest')
                  }}
